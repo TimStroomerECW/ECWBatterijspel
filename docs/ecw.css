@@ -1,0 +1,91 @@
+/* Colours and typefaces observed on ecwenergy.nl on 13 November 2026. */
+:root{--green:#284a57;--lime:#89c765;--ink:#284a57;--muted:#4a4e57;--paper:#f2f3f5;--line:#dce2e3;--ecw-yellow:#ffcc4e;--ecw-green:#89c765;--ecw-blue:#284a57}
+body,button,input{font-family:Arial,sans-serif}
+body{background:#fff;color:var(--ecw-blue)}
+button:focus-visible,a:focus-visible,input:focus-visible{outline-color:#284a57}
+.header{max-width:1280px;justify-content:space-between;gap:24px;background:#fff}
+.brand{font-weight:700;letter-spacing:-.5px}
+.brand-light{font-weight:400}
+.logo{mix-blend-mode:normal}
+h1,h2,h3{font-family:Arial,sans-serif;color:#284a57}
+h1 em{font-family:Arial,sans-serif;font-style:normal;color:#284a57;text-decoration:underline;text-decoration-color:#89c765;text-underline-offset:8px;text-decoration-thickness:5px}
+p{color:#4a4e57}
+.pill{background:#fff8e2;border-color:#f2d581;color:#284a57}
+.live-dot{background:#89c765}
+.btn{background:#ffcc4e;color:#284a57;font-weight:700}
+.btn:hover{background:#89c765;color:#284a57}
+.btn.secondary{background:#edf5e7;color:#284a57}
+.btn.secondary:hover{background:#89c765}
+.input-row{border-color:#b8c5c9}
+.input-row input{color:#284a57}
+.hero-art{background:#f2f3f5}
+.hero-art:before,.hero-art:after{border-color:#dce5df}
+.battery{background:#fff;border-color:#89c765;box-shadow:none}
+.battery:before{background:#89c765}
+.battery-fill{background:#89c765}
+.battery-bolt{color:#284a57;text-shadow:none}
+.art-label{color:#4a4e57}
+.art-label b{color:#284a57}
+.art-caption{color:#4a4e57}
+.topline{max-width:760px;margin-left:auto;margin-right:auto}
+.progress span{background:#dfe7df}
+.progress span.done{background:#89c765}
+.progress span.current{background:#ffcc4e}
+.compact-game{width:100%;max-width:760px;margin:0 auto}
+.compact-game>.card{border-color:#dce2e3;background:#fff}
+.game-status{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;padding:0 0 20px;margin:0 0 24px;border-bottom:1px solid #dce2e3}
+.game-status>div{min-width:0;display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.game-status span{font-size:13px;color:#4a4e57;flex-basis:100%}
+.game-status strong{font-size:28px;line-height:1.2;font-weight:700;letter-spacing:-.5px;white-space:nowrap;color:#284a57;font-variant-numeric:tabular-nums}
+.game-status small{font-size:13px;color:#4a4e57}
+.game-status>.charge-status{align-items:center;gap:6px 10px}
+.charge-meter{display:flex;align-items:center;gap:10px}
+.charge-icon{display:block;width:58px;height:32px;flex:none;color:#284a57}
+.charge-status small{flex-basis:100%}
+
+.market-head{margin-bottom:18px}
+.action{border-color:#cbd8ce;color:#284a57;background:#fff}
+.action-icon{color:#284a57}
+.action small{color:#4a4e57}
+.action:hover:not(:disabled),.action.selected{background:#edf5e7;border-color:#78ae58;box-shadow:0 0 0 1px #78ae58}
+.action.selected:after{color:#284a57}
+.commit{border-color:#dce2e3}
+.commit p{color:#4a4e57}
+.commit .btn:disabled{opacity:1;background:#f2f3f5;color:#65727a}
+.round-result{background:#f1f7ec;border-color:#cfdfc4}
+.round-result p{color:#284a57}
+.finish-head .pill{background:#edf5e7;border-color:#c8dcbb}
+.finish-score{background:#284a57!important;color:#fff}
+.finish-score p,.finish-score .eyebrow{color:#e4ece4}
+.finish-score strong,.finish-score b{color:#fff}
+.leaderboard-status{background:#edf5e7;color:#284a57}
+.score-row.yours{background:#edf5e7}
+.score-rank{background:#ffefba;color:#284a57}
+.log-row{border-color:#dce2e3}
+.log-row small{color:#4a4e57}
+.log-total{background:#edf5e7;border-color:#c7dcb9}
+.history>summary{color:#284a57}
+footer{max-width:1280px;color:#4a4e57}
+@media(max-width:740px){
+ :root{--mobile-nav:0px;--muted:#4a4e57}
+ body{background:#f2f3f5}
+ .header{padding:16px;min-height:78px;justify-content:space-between}
+ .brand{font-size:21px}
+ main{padding-top:22px;min-height:calc(100dvh - 150px)}
+ .topline{gap:10px;flex-wrap:nowrap;margin-bottom:20px}
+ .topline>div:first-child{flex:1 1 auto}
+ .topline h1{font-size:25px}
+ .topline .eyebrow{font-size:12px}
+ .progress{gap:4px}.progress span{width:11px}
+ .game-status{gap:12px;padding-bottom:18px;margin-bottom:20px}
+ .game-status strong{font-size:clamp(22px,7vw,28px)}
+ .game-status span,.game-status small{font-size:13px}
+ .action.selected{background:#edf5e7;border-color:#78ae58}
+ .action.selected:after{color:#284a57}
+ .action:disabled{background:#f2f3f5;border-color:#dce2e3;color:#667078}
+ .action:disabled small{color:#667078}
+ .commit .btn:disabled{background:#e8ecee;color:#586a72}
+ footer{padding:20px 16px calc(24px + env(safe-area-inset-bottom));font-size:12px}
+ html{scroll-padding-top:20px;scroll-padding-bottom:20px}
+ .hero .small-text{font-size:13px}
+}

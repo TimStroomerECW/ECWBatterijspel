@@ -1,0 +1,99 @@
+.header{gap:18px}
+html[data-theme="light"]{color-scheme:only light}
+html[data-theme="dark"]{color-scheme:dark;--paper:#101a14;--ink:#e7f0df;--muted:#b4c6a9;--line:#3b5038}
+[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+[data-theme="dark"] p{color:#c0ceba}
+[data-theme="dark"] .header{border-color:var(--line)}
+[data-theme="dark"] .nav{color:#bdcdb2}
+[data-theme="dark"] .nav.active{color:#e6f1d3;box-shadow:inset 0 -2px #c5e39a}
+[data-theme="dark"] .logo{mix-blend-mode:normal;background:#f4f6ee;border-radius:8px;padding:5px}
+[data-theme="dark"] h1 em{color:#c1db97}
+[data-theme="dark"] .pill{background:#1c2e20;border-color:#4c6743;color:#d6e5c8}
+[data-theme="dark"] .live-dot{background:#bddb8f}
+[data-theme="dark"] .card{background:#1b2b20;border-color:#3b5038}
+[data-theme="dark"] .btn{background:#cce69f;color:#183925}
+[data-theme="dark"] .btn:hover{background:#dcedb6}
+[data-theme="dark"] .btn.secondary{background:#30452c;color:#e3efcf}
+[data-theme="dark"] .btn.secondary:hover{background:#405a34}
+[data-theme="dark"] .text-button{color:#c9dabb}
+[data-theme="dark"] .input-row{background:#1b2b20;border-color:#69835b}
+[data-theme="dark"] input{color:#eef6e6}
+[data-theme="dark"] input::placeholder{color:#b4c5aa;opacity:1}
+[data-theme="dark"] :focus-visible{outline-color:#d5ef9f}
+[data-theme="dark"] .hero-art{background:#1c3020}
+[data-theme="dark"] .hero-art::before,[data-theme="dark"] .hero-art::after{border-color:#3b5332}
+[data-theme="dark"] .hero-art .battery{background:#25482e;border-color:#6c8c5d}
+[data-theme="dark"] .hero-art .battery:before{background:#6c8c5d}
+[data-theme="dark"] .hero-art .battery-fill{background:#bddb8b}
+[data-theme="dark"] .hero-art .battery-bolt{color:#204325;text-shadow:none}
+[data-theme="dark"] .art-label{background:#28402b;color:#bfd0b2;box-shadow:none}
+[data-theme="dark"] .art-label b{color:#e7f0df}
+[data-theme="dark"] .art-label b span{color:#c5d5b8!important}
+[data-theme="dark"] .art-caption{color:#bfd0b2}
+[data-theme="dark"] .number{color:#bfd99a}
+[data-theme="dark"] .progress span{background:#3f5338}
+[data-theme="dark"] .progress span.done{background:#c7e397}
+[data-theme="dark"] .progress span.current{background:#8cbc68}
+[data-theme="dark"] .clock small{color:#c0cfb3}
+[data-theme="dark"] .news{color:#d2dfc5;border-left-color:#a6ca76}
+[data-theme="dark"] .battery-card,[data-theme="dark"] .finish-score{background:#1f5138;color:#f0f7e9}
+[data-theme="dark"] .battery-card .eyebrow{color:#d4e6cd}
+[data-theme="dark"] .score-card p{color:#c3d1b8}
+[data-theme="dark"] .score-amount.positive{color:#cee99f}
+[data-theme="dark"] .action{background:#1c2e21;border-color:#607653;color:#e7f0df}
+[data-theme="dark"] .action small{color:#bed0b2}
+[data-theme="dark"] .action-icon{color:#b6d68d}
+[data-theme="dark"] .action:hover:not(:disabled),[data-theme="dark"] .action.selected{background:#314b2a;border-color:#c2df91;box-shadow:none}
+[data-theme="dark"] .action.selected::after{color:#e0f1bd}
+[data-theme="dark"] .action:disabled{opacity:1;background:#1a241c;border-color:#3b4938;color:#afbea6}
+[data-theme="dark"] .action:disabled small{color:#afbea6}
+[data-theme="dark"] .action:disabled .action-icon{color:#889b7d}
+[data-theme="dark"] .commit{background:#1b2b20;border-color:#4a623f}
+[data-theme="dark"] .commit p{color:#c5d5b8}
+[data-theme="dark"] .commit .btn:disabled{opacity:1;background:#34452e;color:#c3d1b3}
+[data-theme="dark"] .round-result{background:#283f26;border-color:#587546}
+[data-theme="dark"] .round-result p{color:#d1dfc3}
+[data-theme="dark"] .settlement-notice{background:#352e1e;border-color:#9b8045;border-left-color:#d9b260}
+[data-theme="dark"] .settlement-notice h3{color:#f4d999}
+[data-theme="dark"] .settlement-notice p{color:#edddb6}
+[data-theme="dark"] .log-row{background:#1b2b20;border-color:#425839}
+[data-theme="dark"] .log-row small{color:#c2d2b6}
+[data-theme="dark"] .log-total{background:#2d4528;border-color:#75935a}
+[data-theme="dark"] .leaderboard-status{background:#283f25;color:#e0edcc}
+[data-theme="dark"] .leaderboard-status p{color:inherit}
+[data-theme="dark"] .score-row.yours{background:#2d4727}
+[data-theme="dark"] .score-rank{background:#354c2d;color:#deedc2}
+[data-theme="dark"] .score-row small,[data-theme="dark"] .live-score-note{color:#bdceb1}
+[data-theme="dark"] dialog{background:#1b2d21;color:var(--ink);border-color:#6a805b;box-shadow:0 20px 80px #0008}
+[data-theme="dark"] dialog::backdrop{background:#030905bb}
+[data-theme="dark"] dialog>.close{background:#2d422f;color:#e6f0d9;border-color:#799166}
+[data-theme="dark"] dialog p,[data-theme="dark"] dialog li{color:#c7d6bb}
+[data-theme="dark"] .rule{background:#293e2b}
+[data-theme="dark"] .weather-figure{background:#19291d;border-color:#455e39}
+[data-theme="dark"] .weather-unit,[data-theme="dark"] .weather-latest{color:#bdd0af}
+[data-theme="dark"] .weather-latest b{color:#e7f0df}
+[data-theme="dark"] .weather-kind{background:#193e43;color:#82dce7}
+[data-theme="dark"] .weather-kind.sun{background:#3a4a20;color:#dfed99}
+[data-theme="dark"] .weather-fullscreen{background:#2c422b;border-color:#70885f;color:#e1eecb}
+[data-theme="dark"] .weather-fullscreen:hover{background:#405a32}
+[data-theme="dark"] .weather-grid{stroke:#4b633f}
+[data-theme="dark"] .weather-axis{fill:#c9d9bb}
+[data-theme="dark"] .weather-bar.wind .bar-fill{fill:#45c3d7}
+[data-theme="dark"] .weather-bar.sun .bar-fill{fill:#c1dc62}
+[data-theme="dark"] .weather-bar:hover .bar-fill,[data-theme="dark"] .weather-bar:focus .bar-fill,[data-theme="dark"] .weather-bar.selected .bar-fill{fill:#e1f2b8;stroke:#e1f2b8}
+[data-theme="dark"] .weather-selection{color:#c8dbb8}
+[data-theme="dark"] .weather-source-note{color:#b5c8a8}
+[data-theme="dark"] .weather-source-note button{color:#d5ecac}
+[data-theme="dark"] .weather-enlarged .weather-figure{background:#1b2d21}
+
+@media(max-width:740px){
+ .header{justify-content:space-between;gap:12px}
+ [data-theme="dark"] .header nav{background:#14231cf5;border-color:#506446;box-shadow:0 -4px 20px #0004}
+ [data-theme="dark"] .header .nav{color:#d1e1c3}
+ [data-theme="dark"] .header .nav.active{background:#cee6a1;color:#183925;box-shadow:none}
+ [data-theme="dark"] .side{background:var(--paper)}
+ [data-theme="dark"] .side .battery-card .eyebrow,[data-theme="dark"] .charge-label small{color:#d5e7cd}
+ [data-theme="dark"] .side .score-card p{color:#c5d5b8}
+ [data-theme="dark"] dialog.weather-dialog>.close{background:#2d422f;color:#e6f0d9;border-color:#799166}
+ [data-theme="dark"] .page-card>p{color:#c0ceba}
+}

@@ -1,0 +1,192 @@
+/* Shared overflow and focus safeguards; the mobile layout follows below. */
+.mobile-logbook{display:none}
+.board>div,.side,.score-person>div{min-width:0}
+.topline>div:first-child,.score-person{overflow-wrap:anywhere}
+.btn,.action,.nav,.text-button,.weather-fullscreen,.close{touch-action:manipulation}
+body.modal-open{overflow:hidden}
+.table-wrap{-webkit-overflow-scrolling:touch}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
+
+@media(max-width:740px){
+ :root{--mobile-nav:72px}
+ html{scroll-padding-top:140px;scroll-padding-bottom:calc(var(--mobile-nav) + 24px + env(safe-area-inset-bottom));-webkit-text-size-adjust:100%;text-size-adjust:100%}
+ body{font-size:16px;line-height:1.6}
+ .header{height:auto;min-height:80px;padding:16px max(18px,env(safe-area-inset-left));gap:12px;justify-content:flex-start}
+ .brand{font-size:22px;gap:10px;letter-spacing:-.6px}
+ .brand small{font-size:9px;letter-spacing:1.6px}
+ .brand-ecw{width:40px;height:44px}
+ .header nav{position:fixed;inset:auto 0 0;z-index:40;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;height:calc(var(--mobile-nav) + env(safe-area-inset-bottom));padding:8px max(12px,env(safe-area-inset-right)) calc(8px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left));background:#fbfcf8f7;border-top:1px solid #d1dccb;box-shadow:0 -4px 20px #183e300b;backdrop-filter:blur(12px)}
+ .nav{min-width:0;min-height:48px;border-radius:10px;color:#45604e;font-size:14px;font-weight:600;padding:10px 4px;box-shadow:none}
+ .nav.active{background:var(--green);color:#fff;box-shadow:none}
+ main{padding:24px max(16px,env(safe-area-inset-right)) 36px max(16px,env(safe-area-inset-left));min-height:calc(100dvh - 160px)}
+ footer{display:block;padding:18px 16px calc(var(--mobile-nav) + 24px + env(safe-area-inset-bottom));font-size:12px}
+ footer>span:first-child,footer .dot{display:inline}
+ .btn{font-size:16px;min-height:50px;padding:13px 18px;white-space:normal;line-height:1.4}
+ .btn:hover{transform:none}
+ .text-button{font-size:14px;min-height:48px;padding:12px;line-height:1.5}
+ .eyebrow{font-size:11px;line-height:1.65;letter-spacing:1.3px}
+ .small-text,.resumed{font-size:13px;line-height:1.65}
+ p{line-height:1.65}
+ .pill{font-size:12px;line-height:1.5;max-width:100%;padding:8px 12px}
+ .live-dot{flex-shrink:0}
+
+ /* Start: a full-width field and button avoid a compressed input and iOS zoom. */
+ .hero{padding:0 0 30px;gap:30px}
+ .hero h1{font-size:clamp(36px,11vw,48px);letter-spacing:-1.8px;line-height:1.12;margin-bottom:20px}
+ .hero .eyebrow{margin:22px 0 16px}
+ .hero p{font-size:16px;line-height:1.7;margin-bottom:20px}
+ .start-form{margin-top:24px}
+ .start-form label{font-size:15px;margin-bottom:8px}
+ .input-row{flex-direction:column;align-items:stretch;gap:8px;padding:7px;border-radius:12px}
+ .input-row input{min-height:52px;font-size:16px;padding:12px;line-height:1.4}
+ .input-row .btn{width:100%;min-height:52px}
+ .resume{flex-wrap:wrap;gap:12px}
+ .resume .btn{flex:1 0 130px}
+ .hero-art{min-height:240px}
+ .art-label{font-size:12px;padding:10px 14px}
+ .art-label b{font-size:20px}
+ .art-caption{font-size:10px;letter-spacing:1.5px}
+ .facts{gap:24px}
+ .fact h3{font-size:16px}
+ .fact p{font-size:14px;line-height:1.6}
+
+ /* Game: compact status stays visible, while content and controls use one column. */
+ .topline{align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+ .topline>div:first-child{flex:1 1 190px;min-width:0}
+ .topline h1{font-size:26px;line-height:1.2;margin-top:6px}
+ .progress{flex:0 0 auto;gap:5px}
+ .progress span{width:12px;height:6px}
+ .board{gap:14px}
+ .side{position:sticky;top:0;z-index:12;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:8px 0 10px;background:var(--paper);align-self:start}
+ .side .card{padding:12px;border-radius:12px}
+ .side .eyebrow{font-size:11px;letter-spacing:1px}
+ .side .battery-card .eyebrow{color:#d3e3ce}
+ .side .specs,.side-note{display:none}
+ .charge-label{font-size:27px;line-height:1.25;margin-top:7px}
+ .charge-label small{font-size:12px;line-height:1.5;margin-top:4px;color:#d3e3ce}
+ .score-amount{font-size:clamp(20px,5.8vw,27px);line-height:1.4;margin:5px 0 3px;letter-spacing:-.7px;white-space:nowrap;font-variant-numeric:tabular-nums}
+ .side .score-card p{font-size:12px;line-height:1.5;color:#526852}
+ .card{min-width:0;padding:20px 16px;border-radius:14px}
+ .market-head{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;margin-bottom:20px}
+ .market-head h2{font-size:23px;line-height:1.25;overflow-wrap:break-word;margin:9px 0 0}
+ .clock{font-size:23px;white-space:nowrap;line-height:1.3}
+ .clock small{font-size:11px;line-height:1.5;white-space:normal;max-width:96px;margin-top:5px}
+ .news{font-size:16px;line-height:1.7;padding-left:12px;margin-bottom:20px}
+ .action-section{margin-top:22px}
+ .action-section h3{font-size:18px;line-height:1.4;margin-bottom:10px}
+ .action-section>p{font-size:15px;line-height:1.65}
+ .actions{grid-template-columns:1fr;gap:10px}
+ .action{min-height:70px;padding:15px 16px;gap:16px;border-radius:12px;border-width:2px;scroll-margin-top:140px}
+ .action b{font-size:17px;line-height:1.4}
+ .action small{font-size:14px;line-height:1.5}
+ .action-icon{font-size:27px;width:26px;flex-shrink:0}
+ .action.selected{background:#e7f0d8;border-color:#37633c;box-shadow:none}
+ .action.selected::after{content:'✓';margin-left:auto;font-size:22px;font-weight:700;color:var(--green)}
+ .action:disabled{opacity:.55}
+ .commit{position:relative;bottom:auto;z-index:auto;display:flex;flex-direction:column;align-items:stretch;gap:10px;background:#fff;padding:14px 0 4px;margin-top:18px;border-top:1px solid var(--line)}
+ .commit p{font-size:13px;line-height:1.6;max-width:none}
+ .commit .btn{width:100%;min-height:52px}
+ .round-result{padding:18px 15px;margin:16px 0}
+ .round-result .result-number{font-size:clamp(30px,10vw,40px);line-height:1.4;overflow-wrap:anywhere}
+ .round-result p{font-size:15px;line-height:1.75}
+ .settlement-notice{padding:15px 13px;margin-bottom:18px}
+ .settlement-notice h3,.action-section .settlement-notice h3{font-size:16px;line-height:1.4;margin-bottom:8px}
+ .settlement-notice p{font-size:14px;line-height:1.7}
+ .settlement-notice p+p{margin-top:9px}
+
+ /* Graphs and their tables fit the available width without shrinking the labels. */
+ .weather-readable{margin-top:20px}
+ .weather-readable>summary{font-size:16px;min-height:52px}
+ .weather-readable>summary>span{font-size:13px;line-height:1.6;margin-top:5px}
+ .weather-figure{padding:15px 10px 10px}
+ .weather-fullscreen{font-size:13px;min-height:46px;padding:9px 11px}
+ .weather-unit,.weather-latest{font-size:13px;line-height:1.6}
+ .weather-selection{font-size:14px;line-height:1.6}
+ .weather-values>summary{font-size:15px;min-height:48px}
+ .weather-values td{font-size:15px;min-height:46px;padding:12px 8px;white-space:normal}
+ .weather-values th{font-size:13px;padding:10px 8px}
+ .weather-source-note{font-size:12px;line-height:1.7}
+ .weather-source-note button{font-size:13px;min-height:46px}
+
+ /* Read the log as cards instead of panning a four-column table. */
+ .history>summary{font-size:15px;line-height:1.6;min-height:48px;padding:12px 2px;cursor:pointer}
+ .history-table{display:none}
+ .mobile-logbook{display:grid;gap:9px;margin-top:10px}
+ .log-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;align-items:start;background:#fff;border:1px solid var(--line);border-radius:10px;padding:13px 12px}
+ .log-row b{display:block;font-size:14px;line-height:1.5}
+ .log-row small{display:block;color:#536b58;font-size:13px;line-height:1.5;margin-top:4px}
+ .log-row strong{font-size:15px;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;line-height:1.5}
+ .log-total{background:#e7f0d8;border-color:#bfd0ad}
+
+ /* Final score and ranking remain readable with long names and negative totals. */
+ .finish-head{margin:8px 0 24px}
+ .finish-head h1{font-size:clamp(28px,8.5vw,36px);line-height:1.2;letter-spacing:-1px}
+ .finish-head p{font-size:16px;overflow-wrap:anywhere}
+ .finish-layout{gap:16px}
+ .finish-layout h2{font-size:25px;line-height:1.25}
+ .finish-layout p{font-size:15px!important;line-height:1.7}
+ .finish-score strong{font-size:clamp(29px,9vw,43px);line-height:1.3;letter-spacing:-1px;margin:18px 0;white-space:nowrap}
+ .ledger{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;font-size:14px;line-height:1.6;padding:12px 0}
+ .ledger b{white-space:nowrap}
+ .finish-score .small-text{font-size:13px;line-height:1.6}
+ .finish-layout .table-wrap{width:100%}
+ .finish-layout table{width:100%;table-layout:fixed;font-size:14px}
+ .finish-layout th,.finish-layout td{white-space:normal;overflow-wrap:anywhere;padding:12px 6px;line-height:1.5;text-align:left}
+ .finish-layout th{font-size:12px}
+ .finish-layout th:first-child{width:19%}
+ .finish-actions{flex-direction:column;align-items:stretch;gap:10px;margin-top:20px}
+ .finish-actions .btn,.finish-actions .text-button{width:100%}
+ .leaderboard-status{font-size:14px;padding:16px;line-height:1.6}
+ .leaderboard-status p{font-size:14px}
+ .page-card{margin:0 auto}
+ .leaderboard-heading{flex-direction:column;align-items:stretch;gap:16px}
+ .view-title{font-size:32px;line-height:1.2;margin:10px 0 0}
+ .leaderboard-heading .btn{align-self:flex-start;font-size:14px;min-height:46px}
+ .page-card>p{font-size:15px;line-height:1.7;margin-top:18px}
+ .score-row{align-items:start;gap:10px;padding:16px 0}
+ .score-person{flex:1 1 auto;gap:0;align-items:start;min-width:0}
+ .score-person>div{min-width:0}
+ .score-person b{font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+ .score-person small{display:block;font-size:12px;line-height:1.5;margin-top:5px}
+ .score-rank{width:28px;height:28px;flex:0 0 28px;margin-right:8px;font-size:13px}
+ .score-row>b{font-size:15px;line-height:1.5;white-space:nowrap;font-variant-numeric:tabular-nums;padding-top:3px}
+ .score-row.yours{margin:0 -8px;padding:16px 8px}
+ .live-score-note{font-size:13px;line-height:1.65}
+ .empty{font-size:15px;line-height:1.7;padding:28px 0}
+
+ /* Modal content scrolls independently and the close control stays in reach. */
+ dialog,dialog.weather-dialog{width:calc(100vw - 16px);max-width:600px;max-height:calc(100dvh - 24px);padding:0;border-radius:16px;overflow:hidden}
+ #dialogContent{max-height:calc(100dvh - 26px);overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;padding:62px 18px calc(24px + env(safe-area-inset-bottom))}
+ dialog>.close,dialog.weather-dialog>.close{position:absolute;top:8px;right:9px;z-index:5;display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--line);border-radius:50%;background:#fff;color:var(--ink);font-size:28px;line-height:1}
+ dialog h2{font-size:27px;line-height:1.25}
+ dialog p,dialog li{font-size:15px;line-height:1.7}
+ .rules-grid{grid-template-columns:1fr;gap:12px;margin:20px 0}
+ .rule{padding:18px}
+ .rule h3{font-size:17px}
+ .rule p{font-size:15px;line-height:1.7}
+ .weather-enlarged h2{font-size:25px;padding-right:0}
+ .weather-enlarged .weather-figure{padding:6px 0}
+ .weather-original-scroll{max-width:100%;max-height:60dvh}
+}
+
+@media(max-width:359px){
+ main{padding-left:12px;padding-right:12px}
+ .card{padding:18px 13px}
+ .header{padding-left:14px;padding-right:14px}
+ .side{gap:8px}
+ .side .card{padding:11px 10px}
+ .side .eyebrow{font-size:10px;letter-spacing:.8px}
+ .market-head{gap:9px}
+ .market-head h2{font-size:21px}
+ .clock{font-size:21px}
+ .clock small{font-size:10px;max-width:80px}
+ .score-row>b{font-size:14px}
+ .log-row{padding:12px 10px;gap:8px}
+ .log-row strong{font-size:14px}
+}
+@media(max-width:740px){:root{--muted:#52664f}.weather-source-note{color:#566b50}.action:disabled{opacity:1;background:#f0f1ed;border-color:#dce2d5;color:#606c60}.action:disabled small{color:#606c60}.action:disabled .action-icon{color:#88937f}.commit .btn:disabled{opacity:1;background:#e0e7d8;color:#52664f}}
+/* Leave room for play in landscape and when the browser text is enlarged. */
+@media(max-width:740px) and (max-height:500px){:root{--mobile-nav:64px}.side{position:static}.header{min-height:68px;padding-top:12px;padding-bottom:12px}}
+
+.finish-layout.finish-compact{grid-template-columns:1fr;max-width:760px;margin-left:auto;margin-right:auto}
+@media(max-width:740px){.header nav{grid-template-columns:repeat(2,minmax(0,1fr))}}
